@@ -7,21 +7,62 @@
     <title>Programming Language Suggester</title>
   </head>
   <body>
-    <h1 class="heading">Which programming language should you choose?</h1>
-    <form>
-      <label for=""> Question 1 </label>
-      <input name="question1" id="question1" type="text" />
-      <label for=""> Question 2 </label>
-      <input name="question2" id="question2" type="text" />
-      <label for=""> Question 3 </label>
-      <input name="question3" id="question3" type="text" />
-      <label for=""> Question 4 </label>
-      <input name="question4" id="question4" type="text" />
-      <label for=""> Question 5 </label>
-      <input name="question5" id="question5" type="text" />
-      <button type="submit">Submit</button>
-    </form>
-    <div id="result"></div>
+    <h1 class="heading">Which programming language should you choose? 💾</h1>
+    <div class="flex flex-center">
+      <div id="result"></div>
+      <div id="formContainer">
+        <h2 id="questionHeading">Answer the following questions to find out!</h2>
+        <form>
+          <label for="What do you want to achieve with programming?">
+            What do you want to achieve with programming?
+          </label>
+          <select name="question1" id="What do you want to achieve with programming?">
+            <option value="disabled">Select One</option>
+            <option value="Web development">Web development</option>
+            <option value="Machine Learning">Machine Learning</option>
+            <option value="Native App Development">Native App Development</option>
+          </select>
+          <label for="What is your prior experience with programming?">
+            What is your prior experience with programming?
+          </label>
+          <select name="question2" id="What is your prior experience with programming?">
+            <option value="disabled">Select One</option>
+            <option value="question2_answer1">No experience</option>
+            <option value="question2_answer2">Little experience</option>
+            <option value="question2_answer3">Very experienced</option>
+          </select>
+          <label for="What is the demand for the language in the job market?">
+            What is the demand for the language in the job market?
+          </label>
+          <select name="question3" id="What is the demand for the language in the job market?">
+            <option value="disabled">Select One</option>
+            <option value="question3_answer1">Low demand</option>
+            <option value="question3_answer2">Moderate demand</option>
+            <option value="question3_answer3">High demand</option>
+          </select>
+          <label for="What is the learning curve of the language?">
+            What is the learning curve of the language?
+          </label>
+          <select name="question4" id="What is the learning curve of the language?">
+            <option value="disabled">Select One</option>
+            <option value="question4_answer1">Easy</option>
+            <option value="question4_answer2">Moderate</option>
+            <option value="question4_answer3">Difficult</option>
+          </select>
+          <label for="What are the long-term prospects of the language?">
+            What are the long-term prospects of the language?
+          </label>
+          <select name="question5" id="What are the long-term prospects of the language?">
+            <option value="disabled">Select One</option>
+            <option value="question5_answer1">Strong</option>
+            <option value="question5_answer2">Moderate</option>
+            <option value="question5_answer3">Uncertain</option>
+          </select>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+
     <script src="js/script.js"></script>
   </body>
 </html>

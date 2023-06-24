@@ -1,14 +1,22 @@
 window.addEventListener("load", () => {
   const form = document.querySelector("form");
   const submitButton = form.querySelector("button");
+  const resetButton = document.getElementById("resetForm");
+  resetButton.addEventListener("click", resetForm);
   submitButton.addEventListener("click", handleSubmit);
 });
 
 /**
- * Determines the suggested language based on the form data
- * @param {FormData} formData
+ * Resets the form and shows it again
+ * @param {MouseEvent} event
  */
-function determineSuggestedLanguage(formData) {}
+function resetForm() {
+  const form = document.querySelector("form");
+  const resultList = document.getElementById("result");
+  resultList.innerHTML = "";
+  form.reset();
+  form.classList.remove("hidden");
+}
 
 /**
  * Handles the button click event
@@ -52,3 +60,11 @@ function handleSubmit(event) {
     resultElement.appendChild(resultList);
   }
 }
+
+const mockData = {
+  question1: ["question1_answer1"],
+  question2: ["question2_answer1"],
+  question3: ["question3_answer1"],
+  question4: ["question4_answer1"],
+  question5: ["question5_answer1"],
+};

@@ -29,7 +29,10 @@ function handleSubmit(event) {
   questionHeading.innerHTML = "Programming language chosen for you";
   questionHeading.style.color = "green";
   form.classList.add("hidden");
+
   const elements = form.elements;
+
+  // Get the selected values
   let selectedValues = {};
 
   for (const element of elements) {
@@ -42,14 +45,14 @@ function handleSubmit(event) {
     }
   }
 
-  const resultElement = document.getElementById("result");
-  resultElement.innerHTML = "";
-
+  // Show questions with answers
+  const answeredQuestionsList = document.getElementById("result");
+  answeredQuestionsList.innerHTML = "";
   for (const [selectId, values] of Object.entries(selectedValues)) {
     // Create a title for each selected value based on the select id
     const resultTitle = document.createElement("h3");
     resultTitle.textContent = selectId;
-    resultElement.appendChild(resultTitle);
+    answeredQuestionsList.appendChild(resultTitle);
 
     const resultList = document.createElement("ul");
     for (const value of values) {
@@ -57,7 +60,7 @@ function handleSubmit(event) {
       resultListItem.textContent = value;
       resultList.appendChild(resultListItem);
     }
-    resultElement.appendChild(resultList);
+    answeredQuestionsList.appendChild(resultList);
   }
 }
 

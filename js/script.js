@@ -13,6 +13,11 @@ window.addEventListener("load", () => {
 function resetForm() {
   const form = document.querySelector("form");
   const resultList = document.getElementById("result");
+  const answersList = document.getElementById("resultList");
+  const questionHeading = document.getElementById("questionHeading");
+  questionHeading.innerHTML = "Answer the following questions to find out!";
+  questionHeading.style.color = "black";
+  answersList.innerHTML = "";
   resultList.innerHTML = "";
   form.reset();
   form.classList.remove("hidden");

@@ -11,6 +11,7 @@ form {
   gap: 1rem;
   max-width: 400px;
   margin: 0 auto;
+  margin-top: 2rem;
 }
 
 input {
@@ -25,4 +26,12 @@ button {
   border-radius: 0.25rem;
   background: #fff;
   cursor: pointer;
+}
+
+button:hover {
+  background: #f5f5f5;
+}
+
+h1.heading {
+  text-align: center;
 }

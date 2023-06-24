@@ -39,7 +39,6 @@ function handleSubmit(event) {
 
   // Get the selected values
   let selectedValues = {};
-
   for (const element of elements) {
     if (element.tagName === "SELECT") {
       const selectId = element.id;
@@ -67,12 +66,92 @@ function handleSubmit(event) {
     }
     answeredQuestionsList.appendChild(resultList);
   }
+
+  // Suggest languages
+  const suggestedLanguages = suggestLanguages(selectedValues);
+  const resultListElement = document.getElementById("resultList");
+  questionHeading.textContent = "Suggested Programming Languages:";
+
+  const langList = document.createElement("ul");
+  for (const language of suggestedLanguages) {
+    const langListItem = document.createElement("li");
+    langListItem.textContent = language;
+    langList.appendChild(langListItem);
+  }
+  resultListElement.appendChild(langList);
 }
 
-const mockData = {
-  question1: ["question1_answer1"],
-  question2: ["question2_answer1"],
-  question3: ["question3_answer1"],
-  question4: ["question4_answer1"],
-  question5: ["question5_answer1"],
-};
+function suggestLanguages(selectedValues) {
+  const languages = new Set();
+
+  if (selectedValues["What do you want to achieve with programming?"].includes("Web development")) {
+    languages.add("JavaScript");
+  } else if (
+    selectedValues["What do you want to achieve with programming?"].includes("Machine Learning")
+  ) {
+    languages.add("Python");
+  } else if (
+    selectedValues["What do you want to achieve with programming?"].includes(
+      "Native App Development"
+    )
+  ) {
+    languages.add("C#");
+  }
+
+  if (selectedValues["What is your prior experience with programming?"].includes("No experience")) {
+    languages.add("Python");
+  } else if (
+    selectedValues["What is your prior experience with programming?"].includes("Little experience")
+  ) {
+    languages.add("JavaScript");
+  } else if (
+    selectedValues["What is your prior experience with programming?"].includes("Very experienced")
+  ) {
+    languages.add("C#");
+  }
+
+  // What is the demand for the language in the job market?
+  if (
+    selectedValues["What is the demand for the language in the job market?"].includes("High demand")
+  ) {
+    languages.add("JavaScript");
+  } else if (
+    selectedValues["What is the demand for the language in the job market?"].includes(
+      "Moderate demand"
+    )
+  ) {
+    languages.add("Python");
+  } else if (
+    selectedValues["What is the demand for the language in the job market?"].includes("Low demand")
+  ) {
+    languages.add("C#");
+  }
+
+  // What is the learning curve of the language?
+  if (selectedValues["What is the learning curve of the language?"].includes("Easy")) {
+    languages.add("Python");
+  } else if (selectedValues["What is the learning curve of the language?"].includes("Moderate")) {
+    languages.add("JavaScript");
+  } else if (selectedValues["What is the learning curve of the language?"].includes("Difficult")) {
+    languages.add("C#");
+  }
+
+  // What are the long-term prospects of the language?
+  if (
+    selectedValues["What are the long-term prospects of the language?"].includes("High prospects")
+  ) {
+    languages.add("JavaScript");
+  } else if (
+    selectedValues["What are the long-term prospects of the language?"].includes(
+      "Moderate prospects"
+    )
+  ) {
+    languages.add("Python");
+  } else if (
+    selectedValues["What are the long-term prospects of the language?"].includes("Low prospects")
+  ) {
+    languages.add("C#");
+  }
+
+  return languages;
+}

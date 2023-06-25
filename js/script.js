@@ -110,7 +110,6 @@ function suggestLanguages(selectedValues) {
     languages.add("C#");
   }
 
-  // What is the demand for the language in the job market?
   if (
     selectedValues["What is the demand for the language in the job market?"].includes("High demand")
   ) {
@@ -127,7 +126,6 @@ function suggestLanguages(selectedValues) {
     languages.add("C#");
   }
 
-  // What is the learning curve of the language?
   if (selectedValues["What is the learning curve of the language?"].includes("Easy")) {
     languages.add("Python");
   } else if (selectedValues["What is the learning curve of the language?"].includes("Moderate")) {
@@ -136,7 +134,6 @@ function suggestLanguages(selectedValues) {
     languages.add("C#");
   }
 
-  // What are the long-term prospects of the language?
   if (
     selectedValues["What are the long-term prospects of the language?"].includes("High prospects")
   ) {
